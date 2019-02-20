@@ -1,3 +1,26 @@
-body{
-    background-image: url("");
+#body8ball{
+    background-image: url("../images/starry-sky-1656491_1280.jpg");
 }
+#myinput{
+    background-color: aliceblue;
+    color: mediumblue;
+    width:50%;
+    margin:auto;
+    text-align: center;
+}
+/*#response{
+    background-color: aliceblue;
+    color: mediumblue;
+    width:50%;
+    margin:auto;
+    text-align: center;
+}*/
+#myform{
+    background-color: aliceblue;
+    color: mediumblue;
+    width:50%;
+    margin:auto;
+    text-align: center;
+    padding: 1em;
+}
+

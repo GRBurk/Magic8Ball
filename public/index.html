@@ -8,22 +8,58 @@
         <meta name="apple-mobile-web-app-capable" content="yes">
         <link rel="manifest" href="manifest.json">
         <link rel="apple-touch-icon" sizes="512X512" href="Emojione1_1F3B1.svg.png">
+        <link rel="stylesheet" type="text/css" href="css/main.css">
         <title>React App</title>
 </head>
 
-<body>
+<!--<body style="background-image: url("/images/starry-sky-1656491_1280.jpg")"></body>-->
+<body id="body8ball" class="view">
     <form id="myForm">
-        <p><input placeholder="enter your question" /></p>
+        <p id="question" ><input name="quest" placeholder="enter your question" /></p>
         <p id="response">hello there world!</p>
-        <button type="submit">Ask the magic 8 ball</button>
+        <button id="my button" type="submit">Ask the magic 8 ball</button>
     </form>
     <script>
+        let sInput="";
         document.getElementById("myForm").addEventListener("submit", function (event) {
+            sInput=myForm.elements["quest"];
+            //sInput=document.getElementById("question").innerHTML;
+            if(sInput.toLowerCase().match("who")){
             let aChoices = [
-                "certainly",
-                "very likely",
-                "no"
-            ];
+                "A large furry dog!",
+                "A fierce lion!",
+                "A small timid mouse..."];
+            }
+            else if(sInput.toLowerCase().match("what")){
+            let aChoices = [
+                "A rather large aeroplane!",
+                "A city with the most beautiful buildings ever imagined!",
+                "An amazing hot hatchback!"];
+            }
+            else if(sInput.toLowerCase().match("when")){
+            let aChoices = [
+                "In the distant past",
+                "I don't believe that happened",
+                "A recent event!"];
+            }
+            else if(sInput.toLowerCase().match("where")){
+            let aChoices = [
+                "A faraway land with beautiful mountains!",
+                "A dark cave deep underground.",
+                "In the city downtown."];
+            }
+            else if(sInput.toLowerCase().match("why")){
+            let aChoices = [
+                "A troubling question.",
+                "It's not an easy answer.",
+                "Would you like the short answer or the long answer?"];
+            }
+            else{
+                let aChoices = [
+                "Please ask me a question.",
+                "I would love to answer your questions.",
+                "What is the question?"];
+            }
             let nChoice = Math.floor(Math.random() * aChoices.length);
             document.getElementById("response").innerHTML = aChoices[nChoice];
 
