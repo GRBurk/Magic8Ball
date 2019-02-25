@@ -1,12 +1,17 @@
-#body8ball{
+#eightball{
     background-image: url("../images/starry-sky-1656491_1280.jpg");
+    background-position: top, center;
+    margin: 0 auto;
+    font-size: 1.4em;
 }
-#myinput{
+#input{
     background-color: aliceblue;
     color: mediumblue;
-    width:50%;
+    width:80%;
     margin:auto;
     text-align: center;
+    font-size: 1.4em;
+
 }
 /*#response{
     background-color: aliceblue;
@@ -18,9 +23,10 @@
 #myform{
     background-color: aliceblue;
     color: mediumblue;
-    width:50%;
+    width:80%;
     margin:auto;
     text-align: center;
     padding: 1em;
+
 }
 

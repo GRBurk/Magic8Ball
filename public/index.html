@@ -13,58 +13,72 @@
 </head>
 
 <!--<body style="background-image: url("/images/starry-sky-1656491_1280.jpg")"></body>-->
-<body id="body8ball" class="view">
+<body id="eightball">
+    <h1 style="text-align:center; color:antiquewhite">Ask the Magic 8 Ball a question</h1>
     <form id="myForm">
-        <p id="question" ><input name="quest" placeholder="enter your question" /></p>
+        <p><input id="input" placeholder="enter your question" /></p>
         <p id="response">hello there world!</p>
-        <button id="my button" type="submit">Ask the magic 8 ball</button>
+        <button type="submit">Ask the magic 8 ball</button>
     </form>
+    <h1></h1>
+    <h1></h1>
+    <h1 style="font-size:600%; text-align:center; color:antiquewhite">8</h1>
     <script>
-        let sInput="";
         document.getElementById("myForm").addEventListener("submit", function (event) {
-            sInput=myForm.elements["quest"];
-            //sInput=document.getElementById("question").innerHTML;
-            if(sInput.toLowerCase().match("who")){
+            let sInput= document.getElementById("input").value;
+            sInput=sInput.toLowerCase();
+            if(sInput.match("who")){
             let aChoices = [
                 "A large furry dog!",
                 "A fierce lion!",
                 "A small timid mouse..."];
-            }
-            else if(sInput.toLowerCase().match("what")){
+                Respond(aChoices);
+            }else if(sInput.toLowerCase().match("what")){
             let aChoices = [
                 "A rather large aeroplane!",
                 "A city with the most beautiful buildings ever imagined!",
                 "An amazing hot hatchback!"];
+                Respond(aChoices);
             }
             else if(sInput.toLowerCase().match("when")){
             let aChoices = [
                 "In the distant past",
                 "I don't believe that happened",
                 "A recent event!"];
+                Respond(aChoices);
             }
             else if(sInput.toLowerCase().match("where")){
             let aChoices = [
                 "A faraway land with beautiful mountains!",
                 "A dark cave deep underground.",
                 "In the city downtown."];
+                Respond(aChoices);
             }
             else if(sInput.toLowerCase().match("why")){
             let aChoices = [
                 "A troubling question.",
                 "It's not an easy answer.",
                 "Would you like the short answer or the long answer?"];
+                Respond(aChoices);
             }
             else{
-                let aChoices = [
-                "Please ask me a question.",
-                "I would love to answer your questions.",
-                "What is the question?"];
-            }
+            let aChoices = [
+                "certainly",
+                "very likely",
+                "no"
+            ];
+            Respond(aChoices);
+            };
+            //let nChoice = Math.floor(Math.random() * aChoices.length);
+            //document.getElementById("response").innerHTML = sInput + " "+ aChoices[nChoice];
+        });
+
+        function Respond(aChoices){
             let nChoice = Math.floor(Math.random() * aChoices.length);
             document.getElementById("response").innerHTML = aChoices[nChoice];
+            return event.preventDefault()
 
-            event.preventDefault()
-        });
+        }
     </script>
 
 </body>
